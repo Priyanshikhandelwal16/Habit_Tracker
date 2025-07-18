@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#habitText {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#addHabit {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addHabit:hover {
+  background-color: #4cae4c;
+}
+
+#habitList {
+  list-style: none;
+}
+
+.habit {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 5px solid #5cb85c;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.habit.done {
+  opacity: 0.7;
+}
+
+.habit .info span {
+  font-weight: 600;
+  color: #333;
+}
+
+.streak {
+  font-size: 12px;
+  color: #777;
+}
+
+button.completeBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+button.completeBtn:hover {
+  color: green;
+}
+
+button.deleteBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: crimson;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.deleteBtn:hover {
+  color: darkred;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Mobile-first responsiveness */
+@media (max-width: 500px) {
+  .input-section {
+    flex-direction: column;
+  }
+
+  #addHabit {
+    width: 100%;
+  }
+}
